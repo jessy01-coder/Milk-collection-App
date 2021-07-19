@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Report">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MILK CAPACITY MONTHLY REPORT"
+            android:layout_marginVertical="16dp"
+            android:gravity="center"
+            android:textSize="18sp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edYearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnGenerate"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLength="4"
+                    android:id="@+id/edYear"
+                    android:inputType="number"
+                    android:hint="Enter Year"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/edYearLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/btnGenerate"
+                android:background="@color/primary"
+                android:textColor="@color/white"
+                android:text="PLOT GRAPH"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="256dp" />
+    </LinearLayout>
+
+</FrameLayout>
